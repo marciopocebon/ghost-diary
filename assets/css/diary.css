@@ -90,6 +90,7 @@ a:hover {
 
 .post-content img {
     display: block;
+    width: 100%;
     max-width: 100%;
     height: auto;
     padding: 0.6em 0;
