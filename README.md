@@ -6,7 +6,7 @@ Ghost-Diary是一个极简的[Ghost](http://github.com/tryghost/ghost/)中文主
 如果你想使用这个主题，[点击下载](https://github.com/makerdiary/ghost-diary/archive/master.zip)，解压之后放进content/themes里，然后将Ghost切换到你新添加的主题：
 * 重启 Ghost 。Ghost 不会立即发现你往content/themes新添加了文件夹，所以你需要重启 Ghost。
 * 登录 Ghost 管理后台，进入/ghost/settings/general/页面。
-* 在“Theme”下拉菜单里选择你的主题的名字。
+* 在“Theme”下拉菜单里选择“Ghost-Diary-zh”。
 * 点“保存”。
 * 查看博客的前端，欣赏你的新主题吧！
 
