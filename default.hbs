@@ -7,7 +7,7 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
 
     {{! Page Meta }}
-    <title>{{meta_title}} - {{meta_description}}</title>
+    <title>{{meta_title}} - {{meta_description}}{{#post}}{{@blog.title}}{{/post}}</title>
     <meta name="description" content="{{meta_description}}" />
 
     <meta name="HandheldFriendly" content="True" />
