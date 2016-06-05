@@ -214,6 +214,15 @@ a:hover {
     border-color: #91170a;
 }
 
+.icon-googleplus{
+    color: #db4437;
+    border-color: #db4437;
+}
+.icon-googleplus:hover{
+    color: #91170a;
+    border-color: #91170a;
+}
+
 .icon-facebook {
     color: #3f5d9a;
     border-color: #3f5d9a;
