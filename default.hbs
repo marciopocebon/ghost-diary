@@ -74,10 +74,9 @@
 
         <!-- fancybox supported -->
         $(document).ready(function(){                                                                     
-            $(".post-content p img").each(function(){                                                      
-                var imgHtml = $(this).parent().html();                                                        
-                var imgSrc = $(this).attr("src");                                                             
-                $(this).parent().html('<a class="fancybox" href="' + imgSrc + '">' + imgHtml + '</a>'); 
+            $(".post-content img").each(function(){
+                var strA = "<a class='fancybox' href='" + this.src + "'></a>";
+                $(this).wrapAll(strA);                                                      
             });
             $(".fancybox").fancybox();                                                                      
         });
