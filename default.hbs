@@ -24,6 +24,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset "css/diary.min.css?v=fa15f51201"}}" />
     <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css?v=fa15f51201"}}" />
 
+    <link rel="stylesheet" type="text/css" href="{{asset "fancybox/source/jquery.fancybox.css"}}" />
+
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
 </head>
@@ -58,15 +60,30 @@
     <!-- jQuery qrcode Javascript plugins -->
     <script src="{{asset "js/jquery.qrcode-0.12.0.min.js"}}"></script>
 
-    <!-- QR code script -->
+    <script type="text/javascript" src="{{asset "fancybox/lib/jquery.mousewheel-3.0.6.pack.js"}}"></script>  
+    <script type="text/javascript" src="{{asset "fancybox/source/jquery.fancybox.pack.js"}}"></script>
+
     <script>
+         <!-- QR code script -->
         $(qrcode).qrcode({
             "render": "div",
             "size": 105,
             "color": "#3a3",
             "text": "{{@blog.url}}{{url}}"
         });
+
+        <!-- fancybox supported -->
+        $(document).ready(function(){                                                                     
+            $(".post-content p img").each(function(){                                                      
+                var imgHtml = $(this).parent().html();                                                        
+                var imgSrc = $(this).attr("src");                                                             
+                $(this).parent().html('<a class="fancybox" href="' + imgSrc + '">' + imgHtml + '</a>'); 
+            });
+            $(".fancybox").fancybox();                                                                      
+        });
     </script>
+
+
 
 </body>
 </html>
