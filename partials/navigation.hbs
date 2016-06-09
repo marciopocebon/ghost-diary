@@ -1,0 +1,27 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a href="{{@blog.url}}" class="navbar-brand">{{@blog.title}}</a>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                <span class="sr-only">Toggle navigation</span>         
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <div class="collapse navbar-collapse" id="navbar-main">
+            <ul class="nav navbar-nav">
+                {{#foreach navigation}}
+                    <li class="{{#if current}}active{{/if}}"><a href="{{url absolute="true"}}">{{label}}</a></li>
+                {{/foreach}}
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="{{@blog.url}}/ghost/editor/"><span class="fa fa-pencil-square-o"> 写篇文章</span></a>
+                </li>
+            </ul>
+        </div>
+  </div>
+</nav>

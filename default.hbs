@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    
+    <meta property="wb:webmaster" content="e7754fbf714a3533" />
+    <meta property="qc:admins" content="424100732352411216375" />
+
+
+    {{! Page Meta }}
+    <title>{{meta_title}} - {{meta_description}}{{#post}}{{@blog.title}}{{/post}}</title>
+    <meta name="description" content="{{meta_description}}" />
+
+    <meta name="HandheldFriendly" content="True" />
+
+    <link rel="shortcut icon" href="{{asset "images/favicon.ico"}}">
+
+    {{! Styles'n'Scripts }}
+    <link rel="stylesheet" type="text/css" href="{{asset "css/bootstrap.min.css?v=fa15f51201"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "font-awesome/4.4.0/css/font-awesome.min.css?v=fa15f51201"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/diary.min.css?v=fa15f51201"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css?v=fa15f51201"}}" />
+
+    {{! Ghost outputs important style and meta data with this tag }}
+    {{ghost_head}}
+</head>
+
+<body>
+
+	{{navigation}}
+
+    {{! Everything else gets inserted here }}
+    {{{body}}}
+
+
+    {{! Ghost outputs important scripts and data with this tag }}
+    {{ghost_foot}}
+
+
+    <footer>
+        <div class="container">
+            <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
+            <section class="poweredby">使用<a href="https://github.com/makerdiary/ghost-diary" target="_blank">Ghost-Diary</a>中文主题</section>
+        </div>
+    </footer>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="{{asset "js/jquery-1.11.3.min.js"}}"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{{asset "js/bootstrap.min.js"}}"></script>
+
+    <script src="{{asset "js/prism.js"}}"></script>
+
+    <!-- jQuery qrcode Javascript plugins -->
+    <script src="{{asset "js/jquery.qrcode-0.12.0.min.js"}}"></script>
+
+    <!-- QR code script -->
+    <script>
+        $(qrcode).qrcode({
+            "render": "div",
+            "size": 105,
+            "color": "#3a3",
+            "text": "{{@blog.url}}{{url}}"
+        });
+    </script>
+
+</body>
+</html>
+

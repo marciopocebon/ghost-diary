@@ -1,0 +1,94 @@
+{{!< default}}
+
+{{#post}}
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-6 col-md-offset-3">
+                <article class="single-post">
+                    <header class="post-header">
+                        <h1>{{title}}</h1>
+                        <div class="post-author">
+                            <a href="{{#author}}{{url}}{{/author}}">
+                                <img class="author-avatar u-xs-size32x32 u-sm-size36x36" src="{{#if author.image}}{{author.image}}{{else}}{{asset "images/missing_face.png"}}{{/if}}" alt="{{author.name}}" />
+                            </a>
+                            <span class="author-name">{{author}}</span>
+                            <span class="published-date">{{date published_at timeago="true"}}</span>
+                        </div>
+                    </header>
+
+                    <div class="post-content">
+                        {{content}}
+                    </div>
+
+                    <div class="post-tags">
+                        {{#foreach tags}}
+                            <a href="{{url}}"><span class="label label-primary">{{name}}</span></a>
+                        {{/foreach}}
+                    </div>
+                </article>
+
+                <div class="com-share-favor">
+                    <div class="dropup">
+                        <a href="#" class="dropdown-toggle share-favor-btn icon-weixin" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-weixin fa-lg"></i></a>
+                        <div class="dropdown-menu weixin-qrcode" role="menu">
+                            <h4>分享到微信朋友圈</h4>
+                            <div id="qrcode" class="qrcode"></div>
+                            <div class="help">
+                                <p>微信里点“发现”，扫一下二维码便可将本文分享至朋友圈。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 新浪微博 -->
+                    <a class="share-favor-btn icon-weibo" href="javascript:void((function(s,d,e,r,l,p,t,z,c){var%20f='http://v.t.sina.com.cn/share/share.php?appkey=2076276043',u=z||d.location,p=['&url=',e(u),'&title=',e(t||d.title),'&source=',e(r),'&sourceUrl=',e(l),'&content=',c||'gb2312','&pic=',e(p||'')].join('');function%20a(){if(!window.open([f,p].join(''),'mb',['toolbar=0,status=0,resizable=1,width=440,height=430,left=',(s.width-440)/2,',top=',(s.height-430)/2].join('')))u.href=[f,p].join('');};if(/Firefox/.test(navigator.userAgent))setTimeout(a,0);else%20a();})(screen,document,encodeURIComponent,'','','{{#if image}}{{image}}{{/if}}','《{{title}}》：{{excerpt characters="96"}} ...，来自@创客日记','','utf-8'));"><i class="fa fa-weibo fa-lg"></i></a>
+
+                    <!-- Google Plus -->
+                    <a href="https://plus.google.com/share?url={{url absolute="true"}}" target="_blank" class="share-favor-btn icon-googleplus">
+                        <i class="fa fa-google-plus fa-lg"></i>
+                    </a>
+                    <!-- facebook -->
+                    <a target="_blank" href="http://www.facebook.com/share.php?u={{url absolute="true"}}&title={{title}}" class="share-favor-btn icon-facebook">
+                        <i class="fa fa-facebook fa-lg"></i>
+                    </a>
+                    <!-- twitter -->
+                    <a target="_blank" href="http://twitter.com/home?status=http://twitter.com/home?status={{title}}+{{url absolute="true"}}" class="share-favor-btn icon-twitter">
+                        <i class="fa fa-twitter fa-lg"></i>
+                    </a>
+                </div>
+
+                {{!disqus code}}
+                <div id="disqus_thread"></div>
+                <script type="text/javascript">
+                    /* * * CONFIGURATION VARIABLES * * */
+                    var disqus_shortname = 'makerdiary';
+
+                    /* * * DON'T EDIT BELOW THIS LINE * * */
+                    (function() {
+                        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                    })();
+                </script>
+
+                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+                {{!disqus code end}}
+
+                <aside class="read-next">
+                    <ul class="pager">
+                        {{#prev_post}}
+                            <li class="previous"><a href="{{url}}"><i class="fa fa-hand-o-left"></i> 旧的文章</a></li>
+                        {{/prev_post}}
+
+                        {{#next_post}}
+                            <li class="next"><a href="{{url}}">新的文章 <i class="fa fa-hand-o-right"></i></a></li>
+                        {{/next_post}}
+
+                    </ul>
+                </aside>
+
+            </div>
+        </div>
+    </div>
+
+{{/post}}
