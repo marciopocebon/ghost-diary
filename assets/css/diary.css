@@ -6,13 +6,13 @@ select,
 textarea {
     font-size: 14px;
     line-height: 1.5;
-    font-family: Arial, "Hiragino Sans GB", "冬青黑", "Microsoft YaHei", "微软雅黑", "SimSun", "宋体", Helvetica, Tahoma, Arial sans-serif;
+    /*font-family: "Muli", "Helvetica Neue", Arial, sans-serif;*/
     -webkit-font-smoothing: antialiased;
     -webkit-backface-visibility: hidden;
 }
 
 h1, h2, h3, h4, h5, h6{
-    font-family: Arial, "Hiragino Sans GB", "冬青黑", "Microsoft YaHei", "微软雅黑", "SimSun", "宋体", Helvetica, Tahoma, Arial sans-serif;
+    /*font-family: "Muli", "Helvetica Neue", Arial, sans-serif;*/
     -webkit-font-smoothing: antialiased;
     -webkit-backface-visibility: hidden;
 }
